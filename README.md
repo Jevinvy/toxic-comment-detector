@@ -115,7 +115,7 @@ These were merged into a single label:
 
 ## 📁 Project Structure
 
-```text
+```
 toxic-comment-detector/
 │
 ├── app.py                      # Main Gradio web app
@@ -131,3 +131,27 @@ toxic-comment-detector/
     ├── example_not_toxic_2.png
     ├── example_toxic_1.png      # Example of toxic
     └── example_toxic_2.png
+
+```
+## ▶️ Run Locally
+
+To run the project on your machine:
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+## Future Improvements
+
+Potential futrther improvents:
+- Upgrade to transformer models(BERT or DistilBERT) for higher accuracy
+- Add explanation tools (highlighting words contributing to toxicity)
+- Improve recall on subtle toxic comments
+- Extend the model to multiple toxicity categories
+- Add multilingual support
+
+## ⚠️ DISCLAIMER
+
+ The content of this repository is only for educational purpose and portfolio purpose only.
+ It is a simple baseline classifier and may produce incorrect or biased predictions.
+ It should not be used in production or real moderation decisions.
