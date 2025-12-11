@@ -21,6 +21,9 @@
   <img src="https://img.shields.io/badge/ML-Logistic%20Regression-green?style=flat-square"/>
   <img src="https://img.shields.io/badge/NLP-TF--IDF-orange?style=flat-square"/>
   <img src="https://img.shields.io/badge/Status-Deployed-brightgreen?style=flat-square"/>
+   <a href="https://vinjin7-toxic-comment-detector.hf.space">
+    <img src="https://img.shields.io/badge/🤗%20HuggingFace-Space%20Running-brightgreen?style=flat-square"/>
+  </a>
 </p>
 
 
