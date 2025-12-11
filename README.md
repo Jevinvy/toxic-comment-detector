@@ -65,11 +65,9 @@ By allowing users to test the model directly in their browser, the project offer
 ## 🧠 Model Architecture
 
 ### **TF-IDF Vectorizer**
-The core classifier is a **Logistic Regression** model, chosen for its speed and interpretability as a strong baseline for text classification.
+The text is first transformed into numerical representations using TF-IDF, which highlights important words and down-weights common ones.
 
-The model is trained on features extracted using **TF-IDF Vectorization**.
-
-### TF-IDF Hyperparameters
+TF-IDF Hyperparameters
 
 | Parameter | Value | Description |
 | :--- | :--- | :--- |
@@ -78,16 +76,15 @@ The model is trained on features extracted using **TF-IDF Vectorization**.
 | **Preprocessing** | English Stopwords Removed | Common, uninformative words are filtered out. | 
 
 ### **Classifier: Logistic Regression**
-Chosen because it is:
+Logistic Regression is used as the classification model because it is:
 
-- Fast and lightweight  
-- Easy to interpret  
-- Works well for text classification baselines  
-
+- Fast and computationally lightweight
+- Interpretable (weights can show which words influence toxicity)
+- A strong baseline for text classification tasks
 
 ### **Pipeline Summary**
 1. User enters a comment  
-2. TF-IDF vectorizer processes it  
+2. TF-IDF convert text into a sparse numeric vector 
 3. Logistic Regression predicts toxicity  
 4. Gradio UI displays:  
    - Toxic / Not Toxic  
@@ -101,10 +98,16 @@ The model is trained on the **Jigsaw Toxic Comment Classification** dataset, whi
 
 > 📝 **Note:** The dataset is proprietary and **not included** in this repository. You can obtain it from the Kaggle competition page: **[Jigsaw Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)**.
 
-### Label Aggregation
+### Binary Lable Creation
+The original dataset conatins several toxicity categories:
+- `toxic`
+- `obscene`
+- `insult`
+- `identity hate`
+- `threat`
+- `severe_toxic`
 
-The original dataset has multiple toxicity sub-labels (`toxic`, `obscene`, `insult`, `threat`, etc.). These were merged into a single **binary label** for simplification:
-
+These were merged into a single label:  
 * `1` → **Toxic** (Any form of toxicity present)
 * `0` → **Non-Toxic** (Clean comment) 
 
