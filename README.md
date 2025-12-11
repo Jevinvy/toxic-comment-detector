@@ -1,44 +1,70 @@
-## ⚠️ Toxic Comment Detector 🗣️
+<h1 align="center">🛡️ Toxic Comment Detector</h1>
 
-An NLP project that classifies text as **toxic** or **non-toxic** using **TF-IDF features** and a **Logistic Regression model**. The project is deployed as an interactive Gradio web app so anyone can try the model in their browser.
+<p align="center">
+  <i>A lightweight NLP model that detects whether a comment is <b>toxic</b> or <b>non-toxic</b>.<br>
+  Deployed with Gradio.</i>
+</p>
 
-| Live Demo | Source Code |
-| :---: | :---: |
-| 🔗 **[Hugging Face Spaces](https://vinjin7-toxic-comment-detector.hf.space)** | 💻 **[GitHub Repository](https://github.com/your-username/toxic-comment-detector)** |
+<p align="center">
+  <a href="https://vinjin7-toxic-comment-detector.hf.space" target="_blank">
+    🔗 <b>Live Demo on Hugging Face</b>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=py,pycharm" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/ML-Logistic%20Regression-green?style=flat-square"/>
+  <img src="https://img.shields.io/badge/NLP-TF--IDF-orange?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Status-Deployed-brightgreen?style=flat-square"/>
+</p>
+
+
+
+
+
+## 📸 Demo
+
+<p align="center"> <b>•The Interface•</b></p>
+
+![image](https://github.com/Jevinvy/toxic-comment-detector/blob/main/screenshots/Interface.png?raw=true)
+
+<p align="center"> <b>• Toxic v/s Not Toxic •</b></p>
+<p align="center">
+  <img src="https://github.com/Jevinvy/toxic-comment-detector/blob/main/screenshots/example_toxic_1.png?raw=true" width="45%" />
+  <img src="https://github.com/Jevinvy/toxic-comment-detector/blob/main/screenshots/example_not_toxic_2.png?raw=true" width="45%" />
+</p>
+<p align="center"> (Click on the image to see them fully) </p>
 
 ---
 
-## ✨ Project Overview
+## 🔍 Project Overview
 
-Online platforms often struggle with the issue of harmful or toxic comments. This project provides a **lightweight, baseline machine learning solution** to automatically detect toxicity in text.
+Toxic language online is both a technical and psychological challenge: it affects user safety, shapes social interactions, and influences how individuals perceive and respond to digital environments. This project approaches toxicity detection from a combined machine learning and cognitive science perspective, using computational models to approximate aspects of human judgment.
 
-This repository demonstrates key steps in a typical NLP project lifecycle:
+The system processes raw user comments, extracts linguistic patterns using TF-IDF vectorization, and predicts whether a message is toxic or non-toxic. TF-IDF highlights the importance of specific words or phrases, which parallels how humans rely on salient linguistic cues when evaluating emotional tone or harmful intent. A Logistic Regression classifier then uses these features to form a decision boundary—reflecting how simple cognitive models can separate categories based on learned evidence.
 
-* **Text Preprocessing** and **TF-IDF** (Term Frequency-Inverse Document Frequency) feature extraction.
-* **Binary Classification** using a simple yet powerful **Logistic Regression** model.
-* Model evaluation using metrics like precision, recall, and F1-score.
-* Saving and loading production-ready models using `joblib`.
-* **Real-time ML deployment** using the **Gradio** framework on **Hugging Face Spaces**.
+This project demonstrates end-to-end ML engineering:
 
----
+- Cleaning and preparing noisy real-world text  
+- Extracting interpretable features using TF-IDF  
+- Training and evaluating a binary classifier  
+- Understanding precision, recall, and model uncertainty  
+- Saving and loading models for real-time inference  
+- Designing a user-friendly Gradio interface  
+- Deploying an interactive ML app on Hugging Face Spaces  
 
-## 📚 Dataset
-
-The model is trained on the renowned **Jigsaw Toxic Comment Classification** dataset, which consists of comments from Wikipedia's talk pages.
-
-> 📝 **Note:** The dataset is proprietary and **not included** in this repository. You can obtain it from the Kaggle competition page: **[Jigsaw Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)**.
-
-### Label Aggregation
-
-The original dataset has multiple toxicity sub-labels (`toxic`, `obscene`, `insult`, `threat`, etc.). These were merged into a single **binary label** for simplification:
-
-* `1` → **Toxic** (Any form of toxicity present)
-* `0` → **Non-Toxic** (Clean comment)
+By allowing users to test the model directly in their browser, the project offers an accessible way to explore how small changes in wording influence toxicity predictions—mirroring insights into human language processing, perception, and social cognition. It highlights the intersection of NLP, psychology, and machine learning, making it both technically rigorous and conceptually meaningful for Cognitive Science applications.
 
 ---
 
-## 🧠 Model & Feature Engineering
+## 🧠 Model Architecture
 
+### **TF-IDF Vectorizer**
 The core classifier is a **Logistic Regression** model, chosen for its speed and interpretability as a strong baseline for text classification.
 
 The model is trained on features extracted using **TF-IDF Vectorization**.
@@ -49,35 +75,56 @@ The model is trained on features extracted using **TF-IDF Vectorization**.
 | :--- | :--- | :--- |
 | `max_features` | 50,000 | Only considers the top 50,000 most frequent terms. |
 | `ngram_range` | (1, 2) | Considers single words (unigrams) and pairs of words (bigrams). |
-| **Preprocessing** | English Stopwords Removed | Common, uninformative words are filtered out. |
+| **Preprocessing** | English Stopwords Removed | Common, uninformative words are filtered out. | 
+
+### **Classifier: Logistic Regression**
+Chosen because it is:
+
+- Fast and lightweight  
+- Easy to interpret  
+- Works well for text classification baselines  
+
+
+### **Pipeline Summary**
+1. User enters a comment  
+2. TF-IDF vectorizer processes it  
+3. Logistic Regression predicts toxicity  
+4. Gradio UI displays:  
+   - Toxic / Not Toxic  
+   - Probability score  
 
 ---
 
-## 🌐 Gradio Web Application
+## 📊 Dataset
 
-The interactive web app allows users to test the model in real-time without installing any code.
+The model is trained on the **Jigsaw Toxic Comment Classification** dataset, which consists of comments from Wikipedia's talk pages.
 
-🔗 **Direct Link:** [https://vinjin7-toxic-comment-detector.hf.space](https://vinjin7-toxic-comment-detector.hf.space)
+> 📝 **Note:** The dataset is proprietary and **not included** in this repository. You can obtain it from the Kaggle competition page: **[Jigsaw Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)**.
 
-### Prediction Pipeline
+### Label Aggregation
 
-When a user enters a comment into the app:
+The original dataset has multiple toxicity sub-labels (`toxic`, `obscene`, `insult`, `threat`, etc.). These were merged into a single **binary label** for simplification:
 
-1.  The comment is tokenized and transformed using the pre-trained **`tfidf_vectorizer.joblib`**.
-2.  The resulting feature vector is fed into the **`baseline_model.joblib`**.
-3.  The model predicts the probability of the comment being **toxic** vs. **non-toxic**.
-4.  The probability and final classification are displayed instantly.
+* `1` → **Toxic** (Any form of toxicity present)
+* `0` → **Non-Toxic** (Clean comment) 
 
 ---
 
-## 📂 Project Structure
-
-A clean layout for easy navigation:
+## 📁 Project Structure
 
 ```text
-.
-├── app.py                      # 🧑‍💻 The Gradio web interface and inference logic.
-├── requirements.txt            # 📦 Python dependencies (pandas, scikit-learn, gradio, etc.).
+toxic-comment-detector/
+│
+├── app.py                      # Main Gradio web app
+├── requirements.txt            # 📦 Python dependencies (pandas, scikit-learn, gradio, etc.)
+│
 └── models/
     ├── baseline_model.joblib   # 🧠 The trained Logistic Regression classifier.
-    └── tfidf_vectorizer.joblib # ⚙️ The fitted TF-IDF feature extractor.
+    └── tfidf_vectorizer.joblib # TF-IDF vectorizer
+│
+└── screenshots/                 
+    ├── Interface.png            # Gradio interface image
+    ├── example_not_toxic_1.png  # Example of not toxic
+    ├── example_not_toxic_2.png
+    ├── example_toxic_1.png      # Example of toxic
+    └── example_toxic_2.png
