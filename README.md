@@ -61,8 +61,6 @@ This project demonstrates end-to-end ML engineering:
 - Designing a user-friendly Gradio interface  
 - Deploying an interactive ML app on Hugging Face Spaces  
 
-By allowing users to test the model directly in their browser, the project offers an accessible way to explore how small changes in wording influence toxicity predictions—mirroring insights into human language processing, perception, and social cognition. It highlights the intersection of NLP, psychology, and machine learning, making it both technically rigorous and conceptually meaningful for Cognitive Science applications.
-
 ---
 
 ## 🧠 Model Architecture
