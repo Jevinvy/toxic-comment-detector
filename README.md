@@ -2,7 +2,8 @@
 
 <p align="center">
   <i>A lightweight NLP model that detects whether a comment is <b>toxic</b> or <b>non-toxic</b>.<br>
-  Deployed with Gradio.</i>
+  Deployed with Gradio.
+  (This is my first hand on exploration of NLP and deploying a project.)</i>
 </p>
 
 <p align="center">
